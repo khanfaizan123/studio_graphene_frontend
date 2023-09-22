@@ -1,0 +1,133 @@
+h1{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 275;
+    margin-block-start: auto;
+    line-height: normal;
+}
+
+#date{
+    font-family: Syne;
+    
+    position: absolute;
+    left: 18rem;
+    top: 9rem;
+font-size: 135px;
+font-style: normal;
+font-weight: 800;
+line-height: 102.6px;
+
+ 
+
+}
+.newprod{
+    color: var(--Grey-scale-1000, #000);
+   
+    font-family: Syne;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.text{
+    font-size: 12px;
+    color: black;
+    font-weight: 400;   
+}
+
+.swiper-container {
+    display: flex;
+    flex-direction: row !important;
+    width: 100% !important;
+    /* Add other necessary styles */
+  }
+  
+
+.search-results {
+    height: 20rem;
+    overflow: scroll;
+  }
+  .swiper-outer-container {
+    width: 100%; /* Set the width to 100% of the viewport */
+    overflow: hidden; /* Hide content that overflows the container */
+  }
+  
+  /* Styling for the inner container */
+  .swiper-inner-container {
+    width: 100%; /* Set the width to 100% of the viewport */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-right: 27px; /* Adjust for space on the right */
+    margin-left: 13rem; /* Adjust for space on the left */
+  }
+  
+
+#footer{
+    background: url('/assets/18591063.svg') ;
+   
+    height: 420px;
+
+  }
+
+#look{
+    color: #FFF;
+    /* H1 title */
+    font-family: Syne;
+    position: absolute;
+    top: 15rem;
+    left: 10rem;
+    font-size: 132px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 102.6px;
+}
+
+#fresh{
+
+
+    color: white;
+    position: absolute;
+    left: 9rem;
+    top: 2rem;
+    font-family: Syne;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 800;
+}
+p{
+    font-family: Work Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+color:white;
+margin-top: 1.7rem;
+line-height: normal;
+}
+h3{
+    color: #FFF;
+    margin-left: 2rem;
+   
+  
+font-family: Work Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+#subitem{
+    font-size:12px;
+}
+
+
+#navbar{
+    display: flex;
+    
+    margin-top: -2rem;
+   
+    
+}
+
+

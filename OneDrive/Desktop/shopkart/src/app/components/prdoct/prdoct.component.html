@@ -1,0 +1,41 @@
+<div>
+    <img [src]=image alt="Image Description" style="width: 200px; height: 200px; background-color: lightgray;" />
+    <img
+    style="    width: 2rem;
+    display: flex;
+    
+    margin-top: -3rem;
+    margin-left: 10rem;"
+    src="assets/Group 19.svg"
+  />
+  <h3 style="font-family: Syne; font-size: 18px; font-style: normal;    max-height: 60px;overflow:hidden">
+    {{ title }}
+  </h3>
+  <p  
+    style="
+      font-family: Work Sans;
+      position: relative;
+      max-height: 100px; /* Adjust this to your desired max height */
+      overflow: hidden;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--Greyscale-400, rgba(22, 22, 21, 0.5));
+    "
+  >
+    {{ desc }}
+    
+  </p>
+
+  <h3
+    style="
+      color: var(--Grey-scale-1000, #000);
+      font-family: Syne;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 600;
+    "
+  >
+    ${{ price }}
+  </h3>
+</div>

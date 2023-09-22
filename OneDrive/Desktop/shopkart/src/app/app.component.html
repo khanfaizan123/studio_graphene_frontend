@@ -1,0 +1,431 @@
+<router-outlet></router-outlet>
+
+<div style="background: black; height: 34rem">
+  <div
+    style="
+      display: flex;
+      justify-content: space-between;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    "
+  >
+    <h1 style="font-family: Poppins">Shopkart</h1>
+
+    <p>WISHLIST (0) BAG (0)</p>
+  </div>
+  <img
+    style="
+      height: 1px;
+      position: absolute;
+      top: 3.5rem;
+      right: 2rem;
+      left: 2rem;
+    "
+    src="assets/Line.svg"
+  />
+  <img
+    style="
+      position: absolute;
+      top: 2.7rem;
+      left: 20rem;
+      height: 28px;
+      color: #000;
+    "
+    src="assets/Star 4.png"
+  />
+
+  <nav>
+    <ul style="display: flex; margin-top: -2rem; gap: 20px">
+      <h3
+        style="
+          color: white;
+          font-family: Poppins, sans-serif;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+        "
+        *ngFor="let item of navbar"
+        [routerLink]="['/' + item.id]"
+      >
+        {{ item.name }}
+        <ul style="margin-left: -4.5rem" *ngIf="item.child">
+          <h3
+            id="subitem"
+            style="color: white"
+            *ngFor="let subItem of item.child"
+            [routerLink]="['/' + subItem.id]"
+          >
+            {{ subItem.name }}
+          </h3>
+        </ul>
+      </h3>
+    </ul>
+  </nav>
+
+  <div style="display: flex; justify-content: flex-end">
+    <h2 id="fresh" style="color: white">Fresh</h2>
+    <h2 id="date">
+      <img style="width: 70%" src="assets/2022.svg" />
+    </h2>
+    <h2 id="look">Look</h2>
+
+    <img
+      style="
+        margin-top: -1rem;
+        width: 900px;
+        height: 250.301px;
+
+        background: #f07e15;
+      "
+      src="assets/Rectangle.svg"
+    />
+    <img
+      style="position: absolute; top: 29rem; right: 25rem"
+      src="assets/Line.svg"
+    />
+    <img
+      style="
+        position: absolute;
+        top: 27.7rem;
+        right: 23rem;
+        width: 57px;
+        height: 44.081px;
+      "
+      src="assets/Star 4.png"
+    />
+
+    <div style="position: absolute; top: 24rem; right: -0.5rem; width: 12%">
+      <p class="text">OREGON JACKET $124</p>
+    </div>
+    <img
+      style="
+        position: absolute;
+        margin-top: -10rem;
+        width: 17rem;
+        margin-right: 2rem;
+      "
+      src="assets/Star 3.png"
+    />
+    <img
+      style="
+        position: absolute;
+        top: 6rem;
+        width: 442px;
+        opacity: 0.8;
+        height: 76%;
+      "
+      src="assets/man.svg"
+    />
+  </div>
+
+  <p
+    style="
+      position: absolute;
+      bottom: 3rem;
+      left: 5rem;
+      font-size: 14px;
+      line-height: normal;
+    "
+  >
+    See More <img src="assets/Vector.svg" />
+  </p>
+</div>
+
+<div>
+  <div>
+    <h2
+      style="
+        color: var(--Grey-scale-1000, #000);
+        font-family: Syne;
+        font-size: 60px;
+        margin-top: 4rem;
+        margin-left: 3rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      "
+    >
+      New Products
+      <img
+        style="
+          width: 1260px;
+          background: black;
+          height: 1px;
+          position: absolute;
+          top: 42.5rem;
+          left: 4rem;
+          /* margin-left: -42rem; */
+          width: 29rem;
+        "
+        src="assets/Line.svg"
+      />
+      <img
+        style="
+          position: absolute;
+          top: 41.7rem;
+          left: 3rem;
+          height: 28px;
+          background: black;
+        "
+        src="assets/Star 4.png"
+      />
+    </h2>
+    <div
+      style="
+        position: absolute;
+
+        gap: 1rem;
+
+        right: 2rem;
+        bottom: -5rem;
+        display: flex;
+      "
+    >
+      <img (click)="scrollLeft()" src="assets/Arrow 2.svg" />
+      <img (click)="scrollRight()" src="assets/Arrow 1.svg" />
+    </div>
+    <aside
+      style="
+        display: flex;
+        flex-direction: column;
+        left: 3rem;
+        position: absolute;
+      "
+    >
+      <div *ngFor="let cate of category">
+        <p
+          (click)="handleCategoryClick(cate)"
+          [style.color]="
+            selectedCategory === cate
+              ? 'var(--Grey-scale-1000, #000)'
+              : 'var(--Grey-scale-1000, #000)'
+          "
+          [style.fontSize]="selectedCategory === cate ? '17px' : '18px'"
+          [style.fontWeight]="selectedCategory === cate ? '600' : '400'"
+          style="
+            font-style: normal;
+
+            font-family: Syne;
+          "
+        >
+          {{ cate }}
+        </p>
+      </div>
+    </aside>
+
+    <div class="swiper-outer-container">
+      <div class="swiper-inner-container">
+        <div class="swiper-container">
+          <div
+            class="swiper-wrapper"
+            style="margin-right: 2rem"
+            *ngFor="let product of products"
+          >
+            <app-prdoct
+              class="swiper-slide"
+              [title]="product.title"
+              [desc]="product.description"
+              [price]="product.price"
+              [image]="product.image"
+            ></app-prdoct>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div></div>
+  </div>
+</div>
+
+<div id="footer">
+  <div
+    style="
+      display: flex;
+      left: 12rem;
+      flex-direction: column;
+
+      position: absolute;
+      left: 11rem;
+    "
+  >
+    <h2
+      style="
+        color: var(--Grey-Scale-200, rgba(255, 255, 255, 0.5));
+        /* Subtitles */
+        font-family: Syne;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 600;
+      "
+    >
+      Newsletter
+    </h2>
+    <p
+      style="
+        color: var(--Grey-Scale-200, rgba(255, 255, 255, 0.5));
+        /* Body text 18 */
+        font-family: Work Sans;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      "
+    >
+      Get news about articles and updates in your inbox
+    </p>
+  </div>
+  <!-- contact-form.component.html -->
+  <form
+    [formGroup]="myForm"
+    (ngSubmit)="onSubmit()"
+    style="
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      /* bottom: -17rem; */
+      top: 81rem;
+      left: 37rem;
+      position: absolute;
+    "
+  >
+    <label
+      style="
+        color: var(--Grey-Scale-200, rgba(255, 255, 255, 0.5));
+        /* Body text 18 */
+        font-family: Work Sans;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+      "
+      for="name"
+      >Name</label
+    >
+    <input
+      style="
+        background: none;
+        border: none;
+        border-bottom: 1px solid white;
+        color: white;
+      "
+      id="name"
+      type="text"
+      formControlName="name"
+    />
+    <div
+      *ngIf="
+        myForm.get('name')?.hasError('required') && myForm.get('name')?.touched
+      "
+      style="color: red"
+    >
+      Name is required.
+    </div>
+
+    <label
+      style="
+        color: var(--Grey-Scale-200, rgba(255, 255, 255, 0.5));
+        /* Body text 18 */
+        font-family: Work Sans;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+      "
+      for="email"
+      >Email</label
+    >
+    <input
+      style="
+        background: none;
+        border: none;
+        border-bottom: 1px solid white;
+        color: white;
+      "
+      id="email"
+      type="email"
+      formControlName="email"
+    />
+    <div style="color:red;" *ngIf="myForm.get('email')?.hasError('required') && myForm.get('email')?.touched">
+      Email is required.
+    </div>
+    <div style="color:red;" *ngIf="myForm.get('email')?.hasError('email') && myForm.get('email')?.touched">
+      Invalid email format.
+    </div>
+
+    <label
+      style="
+        color: var(--Grey-Scale-200, rgba(255, 255, 255, 0.5));
+        /* Body text 18 */
+        font-family: Work Sans;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+      "
+      for="message"
+      >Message</label
+    >
+    <input
+      style="
+        background: none;
+        border: none;
+        border-bottom: 1px solid white;
+        color: white;
+      "
+      id="mesaage"
+      type="text"
+      formControlName="message"
+    />
+
+    <div style="color:red;" *ngIf="myForm.get('message')?.hasError('required') && myForm.get('message')?.touched">
+      Message is required.
+    </div>
+  </form>
+
+  <button
+    type="submit"
+    style="
+      border-radius: 50%;
+      border-color: #f07e15;
+      background: transparent;
+      width: 50%;
+      color: #f07e15;
+      margin-left: 80%;
+
+      margin-top: 12rem;
+      width: 13%;
+      height: 28%;
+
+      top: 89rem;
+    "
+  >
+    SEND
+  </button>
+
+  <img
+    style="position: absolute; top: 90rem; width: 70%; left: 11rem"
+    src="assets/get.svg"
+  />
+
+  <div
+    style="
+      background: black;
+      height: 3rem;
+
+      margin-top: 4rem;
+      width: 98.7%;
+      position: absolute;
+    "
+  >
+    <p
+      style="
+        text-align: center;
+        margin-top: 1rem;
+        font-family: Poppins;
+        font-size: 12px;
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+      "
+    >
+      Copyright 2022 All Rights Reserved By SG
+    </p>
+  </div>
+</div>
